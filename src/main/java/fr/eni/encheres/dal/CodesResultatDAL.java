@@ -1,4 +1,4 @@
-package fr.eni.seconnecter.dal;
+package fr.eni.encheres.dal;
 
 /**
  * Les codes disponibles sont entre 10000 et 19999 

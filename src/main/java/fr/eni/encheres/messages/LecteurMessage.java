@@ -1,4 +1,4 @@
-package fr.eni.seconnecter.messages;
+package fr.eni.encheres.messages;
 
 import java.util.ResourceBundle;
 
