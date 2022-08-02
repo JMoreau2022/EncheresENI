@@ -9,6 +9,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import fr.eni.encheres.dll.UtilisateurManager;
+import fr.eni.encheres.messages.BusinessException;
+
 /**
  * Servlet implementation class CreationUtilisateur
  */
@@ -35,7 +38,28 @@ public class ServletCreationUtilisateur extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+		request.setCharacterEncoding("UTF-8");
+
+		// recupération des paramêtres dans la requête
+		String pseudo = request.getParameter("pseudo".trim());
+		String nom = request.getParameter("nom".trim());
+		String prenom = request.getParameter("prenom".trim());
+		String email = request.getParameter("email".trim());
+		String telephone = request.getParameter("telephone".trim());
+		String rue = request.getParameter("rue".trim());
+		String codePostal = request.getParameter("codepostal".trim());
+		String ville = request.getParameter("ville".trim());
+		String mdp = request.getParameter("mdp".trim());
+		//String confMdp = request.getParameter("confirmationMdp".trim());
+		
+		
+		UtilisateurManager utilisateurManager = new UtilisateurManager();
+		//utilisateurManager.ajouterUtilisateur();
+		try {
+			utilisateurManager.creationUtilisateur(pseudo, nom, prenom, email, telephone, rue, codePostal, ville, mdp);
+		} catch (BusinessException e) {
+			e.printStackTrace();
+		}
 		doGet(request, response);
 	}
 

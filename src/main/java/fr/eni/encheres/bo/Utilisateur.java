@@ -21,7 +21,26 @@ public class Utilisateur {
     private String mot_de_passe;
     private Integer credit;
     private Integer administrateur;
+
+    /* constructeur sans le no_utilisateur */
+	public Utilisateur(String pseudo, String nom, String prenom, String email,
+			String telephone, String rue, String code_postal, String ville, String mot_de_passe, Integer credit,
+			Integer administrateur) {
+		super();
+		this.pseudo = pseudo;
+		this.nom = nom;
+		this.prenom = prenom;
+		this.email = email;
+		this.telephone = telephone;
+		this.rue = rue;
+		this.code_postal = code_postal;
+		this.ville = ville;
+		this.mot_de_passe = mot_de_passe;
+		this.credit = credit;
+		this.administrateur = administrateur;
+	}
     
+	/* constructeur avec tous les paramêtres */
 	public Utilisateur(Integer no_utilisateur, String pseudo, String nom, String prenom, String email,
 			String telephone, String rue, String code_postal, String ville, String mot_de_passe, Integer credit,
 			Integer administrateur) {

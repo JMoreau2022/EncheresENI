@@ -21,4 +21,7 @@ public class CodesResultatDAL {
 	 */
 	public static final int LECTURE_ECHEC=10002;
 	
+	// Erreur technique
+	public static final int CODE_ERREUR_TECHNIQUE=10003;
+	
 }
